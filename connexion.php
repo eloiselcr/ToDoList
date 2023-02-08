@@ -1,5 +1,5 @@
 <?php
-start_session();
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -16,35 +16,51 @@ start_session();
 
     <h1> Bienvenue sur votre page d'accès ToDoList </h1>
 
-<?php
+    <?php
 
-try {
-    $ipserver = "192.168.64.86";
-    $nomBase = "ToDolist";
-    $loginPrivilege = "root";
-    $passPrivilege = "root";
+    try {
+        $ipserver = "192.168.64.86";
+        $nomBase = "ToDoList";
+        $loginPrivilege = "Utilisateur";
+        $passPrivilege = "todolist1234";
 
-    $GLOBALS["pdo"] = new PDO ('mysql:host=' . $ipserver . ';dbname=' . $nomBase . '', $loginPrivilege, $passPrivilege);    
+        $GLOBALS["pdo"] = new PDO('mysql:host=' . $ipserver . ';dbname=' . $nomBase . '', $loginPrivilege, $passPrivilege);
+    } catch (Exception $error) {
+        echo "error est : " . $error->getMessage();
     }
+
+
+    if (isset($_POST["connexion"])) {
+        $requete = "SELECT * FROM `Utilisateurs` WHERE Utilisateurs.login = '" . $_POST["username"] . "' AND Utilisateurs.mdp='" . $_POST["password"] . "';";
+        $resultat = $GLOBALS["pdo"]->query($requete);
+        if ($resultat->rowCount() > 0) {
+           
+            $_SESSION["toto"] = "titi";
+        }
+    }
+
+    
+    if (isset($_SESSION["toto"]) && $_SESSION["toto"]=="titi") {
+        echo "vous etes connexté";
+
+    } else {
+
 
     ?>
 
 
-    <form action="connexion.php" method="post">
+        <form action="" method="post">
             <label for="username">Entrez votre nom d'utilisateur :</label>
             <input type="text" id="username" name="username">
 
             <label for="password">Entrez votre mot de passe :</label>
             <input type="password" id="password" name="password">
 
-            <input type="submit" value="Submit">
-    </form>
+            <input type="submit" value="Submit" name="connexion">
+        </form>
 
+    <?php } ?>
 
 </body>
 
 </html>
-
-
-
-
