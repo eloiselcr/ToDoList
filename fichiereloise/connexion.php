@@ -10,7 +10,7 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>APPLICATION PHP BDD - TODOLIST</title>
-    <link rel="stylesheet" href="connexion_css.css">
+    <link rel="stylesheet" href="connexion.css">
     
 </head>
 
