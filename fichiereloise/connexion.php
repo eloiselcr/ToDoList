@@ -4,7 +4,6 @@ session_start();
 
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,7 +12,6 @@ session_start();
     <link rel="stylesheet" href="connexion.css">
     
 </head>
-
 <body>
 
     <h1> Bienvenue sur votre page d'accès ToDoList </h1>
@@ -65,128 +63,132 @@ session_start();
         ?>
 
 
-<section class="vh-100 gradient-custom-2">
-  <div class="container py-5 h-100">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col-md-12 col-xl-10">
-
-        <div class="card mask-custom">
-          <div class="card-body p-4 text-white">
-
-            <div class="text-center pt-3 pb-2">
-              <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-todo-list/check1.webp"
-                alt="Check" width="60">
-              <h2 class="my-4">Task List</h2>
+<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css /> -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-1 col-md-10">
+            <div class="panel">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col col-sm-3 col-xs-12">
+                            <h4 class="title">Data <span>List</span></h4>
+                        </div>
+                        <div class="col-sm-9 col-xs-12 text-right">
+                            <div class="btn_group">
+                                <input type="text" class="form-control" placeholder="Search">
+                                <button class="btn btn-default" title="Reload"><i class="fa fa-sync-alt"></i></button>
+                                <button class="btn btn-default" title="Pdf"><i class="fa fa-file-pdf"></i></button>
+                                <button class="btn btn-default" title="Excel"><i class="fas fa-file-excel"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Full Name</th>
+                                <th>Age</th>
+                                <th>Job Title</th>
+                                <th>City</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Vincent Williamson</td>
+                                <td>31</td>
+                                <td>iOS Developer</td>
+                                <td>Sinaai-Waas</td>
+                                <td>
+                                    <ul class="action-list">
+                                        <li><a href="#" data-tip="edit"><i class="fa fa-edit"></i></a></li>
+                                        <li><a href="#" data-tip="delete"><i class="fa fa-trash"></i></a></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Taylor Reyes</td>
+                                <td>22</td>
+                                <td>UI/UX Developer</td>
+                                <td>Baileux</td>
+                                <td>
+                                    <ul class="action-list">
+                                        <li><a href="#" data-tip="edit"><i class="fa fa-edit"></i></a></li>
+                                        <li><a href="#" data-tip="delete"><i class="fa fa-trash"></i></a></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Justin Block</td>
+                                <td>26</td>
+                                <td>Frontend Developer</td>
+                                <td>Overland Park</td>
+                                <td>
+                                    <ul class="action-list">
+                                        <li><a href="#" data-tip="edit"><i class="fa fa-edit"></i></a></li>
+                                        <li><a href="#" data-tip="delete"><i class="fa fa-trash"></i></a></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Sean Guzman</td>
+                                <td>26</td>
+                                <td>Web Designer</td>
+                                <td>Gloucester</td>
+                                <td>
+                                    <ul class="action-list">
+                                        <li><a href="#" data-tip="edit"><i class="fa fa-edit"></i></a></li>
+                                        <li><a href="#" data-tip="delete"><i class="fa fa-trash"></i></a></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Keith Carter</td>
+                                <td>20</td>
+                                <td>Graphic Designer</td>
+                                <td>Oud-Turnhout</td>
+                                <td>
+                                    <ul class="action-list">
+                                        <li><a href="#" data-tip="edit"><i class="fa fa-edit"></i></a></li>
+                                        <li><a href="#" data-tip="delete"><i class="fa fa-trash"></i></a></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="panel-footer">
+                    <div class="row">
+                        <div class="col col-sm-6 col-xs-6">showing <b>5</b> out of <b>25</b> entries</div>
+                        <div class="col-sm-6 col-xs-6">
+                            <ul class="pagination hidden-xs pull-right">
+                                <li><a href="#"><</a></li>
+                                <li class="active"><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li><a href="#">></a></li>
+                            </ul>
+                            <ul class="pagination visible-xs pull-right">
+                                <li><a href="#"><</a></li>
+                                <li><a href="#">></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <table class="table text-white mb-0">
-              <thead>
-                <tr>
-                  <th scope="col">Team Member</th>
-                  <th scope="col">Task</th>
-                  <th scope="col">Priority</th>
-                  <th scope="col">Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="fw-normal">
-                  <th>
-                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
-                      alt="avatar 1" style="width: 45px; height: auto;">
-                    <span class="ms-2">Alice Mayer</span>
-                  </th>
-                  <td class="align-middle">
-                    <span>Call Sam For payments</span>
-                  </td>
-                  <td class="align-middle">
-                    <h6 class="mb-0"><span class="badge bg-danger">High priority</span></h6>
-                  </td>
-                  <td class="align-middle">
-                    <a href="#!" data-mdb-toggle="tooltip" title="Done"><i
-                        class="fas fa-check fa-lg text-success me-3"></i></a>
-                    <a href="#!" data-mdb-toggle="tooltip" title="Remove"><i
-                        class="fas fa-trash-alt fa-lg text-warning"></i></a>
-                  </td>
-                </tr>
-                <tr class="fw-normal">
-                  <th>
-                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp"
-                      alt="avatar 1" style="width: 45px; height: auto;">
-                    <span class="ms-2">Kate Moss</span>
-                  </th>
-                  <td class="align-middle">Make payment to Bluedart</td>
-                  <td class="align-middle">
-                    <h6 class="mb-0"><span class="badge bg-success">Low priority</span></h6>
-                  </td>
-                  <td class="align-middle">
-                    <a href="#!" data-mdb-toggle="tooltip" title="Done"><i
-                        class="fas fa-check fa-lg text-success me-3"></i></a>
-                    <a href="#!" data-mdb-toggle="tooltip" title="Remove"><i
-                        class="fas fa-trash-alt fa-lg text-warning"></i></a>
-                  </td>
-                </tr>
-                <tr class="fw-normal">
-                  <th>
-                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3-bg.webp"
-                      alt="avatar 1" style="width: 45px; height: auto;">
-                    <span class="ms-2">Danny McChain</span>
-                  </th>
-                  <td class="align-middle">Office rent</td>
-                  <td class="align-middle">
-                    <h6 class="mb-0"><span class="badge bg-warning">Middle priority</span></h6>
-                  </td>
-                  <td class="align-middle">
-                    <a href="#!" data-mdb-toggle="tooltip" title="Done"><i
-                        class="fas fa-check fa-lg text-success me-3"></i></a>
-                    <a href="#!" data-mdb-toggle="tooltip" title="Remove"><i
-                        class="fas fa-trash-alt fa-lg text-warning"></i></a>
-                  </td>
-                </tr>
-                <tr class="fw-normal">
-                  <th>
-                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava5-bg.webp"
-                      alt="avatar 1" style="width: 45px; height: auto;">
-                    <span class="ms-2">Alexa Chung</span>
-                  </th>
-                  <td class="align-middle">Office grocery shopping</td>
-                  <td class="align-middle">
-                    <h6 class="mb-0"><span class="badge bg-danger">High priority</span></h6>
-                  </td>
-                  <td class="align-middle">
-                    <a href="#!" data-mdb-toggle="tooltip" title="Done"><i
-                        class="fas fa-check fa-lg text-success me-3"></i></a>
-                    <a href="#!" data-mdb-toggle="tooltip" title="Remove"><i
-                        class="fas fa-trash-alt fa-lg text-warning"></i></a>
-                  </td>
-                </tr>
-                <tr class="fw-normal">
-                  <th class="border-0">
-                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava6-bg.webp"
-                      alt="avatar 1" style="width: 45px; height: auto;">
-                    <span class="ms-2">Ben Smith</span>
-                  </th>
-                  <td class="border-0 align-middle">Ask for Lunch to Clients</td>
-                  <td class="border-0 align-middle">
-                    <h6 class="mb-0"><span class="badge bg-success">Low priority</span></h6>
-                  </td>
-                  <td class="border-0 align-middle">
-                    <a href="#!" data-mdb-toggle="tooltip" title="Done"><i
-                        class="fas fa-check fa-lg text-success me-3"></i></a>
-                    <a href="#!" data-mdb-toggle="tooltip" title="Remove"><i
-                        class="fas fa-trash-alt fa-lg text-warning"></i></a>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-
-
-          </div>
         </div>
-
-      </div>
     </div>
-  </div>
-</section>
+</div>
+
 
 <?php
     } 
