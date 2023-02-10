@@ -113,3 +113,45 @@
   .addBtn:hover {
     background-color: #bbb;
   }
+  
+input[type="submit"] {
+    border: none;
+    outline: none;
+    background-color: #1c1c19;
+    background: #45f3ff;
+    padding: 11px 25px;
+    width: 100px;
+    margin-top: 10px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.deco {
+  padding: 10px;
+  width: 25%;
+  background: #d9d9d9;
+  color: #555;
+  float: left;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 0;
+}
+
+.deco:hover {
+  background-color: #bbb;
+}
+
+button[type="submit"] {
+    padding: 10px;
+    width: 25%;
+    background-color: #1c1c19;
+    color: #45f3ff;
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 0;
+}

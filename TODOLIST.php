@@ -38,7 +38,7 @@ session_start();
                         <i></i>
                     </div>
                     <div class="links">
-                        <a href="#">S'inscrire</a>
+                        <a href="#">S'inscrire (à venir, bêta privée)</a>
                     </div>
                     <input type="submit" value="ENTER" name="connexion">
                 </div>
@@ -77,14 +77,15 @@ session_start();
     {
     ?>
             <div class="header">
-                <p class="header_titre">Ma super Todo List ! </p>
+                <p class="header_titre">Bienvenue Lama</p>
             </div>
         <div id="myDIV" class="header">
-            <h2>My To Do List</h2>
+            <h2>La ToDo List du Bled</h2>
             <form class="taches_input" method="post" action="">
                 <label for="addtache"></label>
                 <input id="myInput" id="inserer" type="text" name="tache" />
                 <input type="submit" name="envoyer_tache" class="addBtn"></button>
+                <button type="submit" name="deconnexion" class="deco" >Déconnexion</button>
             </form>
         </div>   
         </div>
@@ -97,9 +98,9 @@ session_start();
                 $requeteaddtache = "INSERT INTO `Tache` ( `idUtilisateur`, `nom`) VALUES ( '" . $_SESSION["idUser"] . "', '" . $_POST["tache"] . "');";
                 //echo $addtache;*
                 $GLOBALS["pdo"]->query($requeteaddtache);
-                echo "nouvelle tache crée N°" . $GLOBALS["pdo"]->lastInsertId() . " .";
+                echo "Nouvelle tâche insérée" . $GLOBALS["pdo"]->lastInsertId() . " .";
             } else {
-                echo "vous n'etes pas identifié";
+                echo "Vous n'êtes pas identifié...";
             }
         }
 
@@ -136,8 +137,13 @@ session_start();
                     
                 }
             }
-            ?>
 
+            if(isset($_POST['deconnexion'])) // SESSION DESTROY pour la Deconnexion
+            {
+        session_destroy();
+        header('Location: TODOLIST.php');
+    }
+            ?>
         </ul>
     <?php
     

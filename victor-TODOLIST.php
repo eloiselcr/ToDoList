@@ -90,7 +90,7 @@ session_start();
     {
     ?>
             <div class="header">
-                <p class="header_titre">Ma super Todo List ! </p>
+                <p class="header_titre">Ma super Todo List du Bled ! </p>
             </div>
         <div id="myDIV" class="header">
             <h2>My To Do List</h2>
@@ -98,7 +98,7 @@ session_start();
                 <label for="addtache"><span>Ajouter une tâche</span></label>
                 <input id="myInput" id="inserer" type="text" name="tache" />
                 <input type="submit" name="envoyer_tache" class="addBtn">Add</button>
-                <button type="submit" name="deconnexion" >Se deconnexion</button>
+                <button type="submit" name="deconnexion" class="deco" >Se deconnexion</button>
             </form>
         </div>   
         </div>
