@@ -10,7 +10,11 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>APPLICATION PHP BDD - TODOLIST</title>
     <link rel="stylesheet" href="connexion.css">
-    
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
 </head>
 <body>
 
@@ -35,10 +39,10 @@ session_start();
     }
 
     try { // Connexion à la base de donnée 
-        $ipserver = "192.168.64.86";
+        $ipserver = "192.168.1.57";
         $nomBase = "ToDoList";
-        $loginPrivilege = "Utilisateur";
-        $passPrivilege = "todolist1234";
+        $loginPrivilege = "root";
+        $passPrivilege = "root";
 
         $GLOBALS["pdo"] = new PDO('mysql:host=' . $ipserver . ';dbname=' . $nomBase . '', $loginPrivilege, $passPrivilege);
     } catch (Exception $error) {
@@ -63,131 +67,18 @@ session_start();
         ?>
 
 
-<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css /> -->
-<div class="container">
-    <div class="row">
-        <div class="col-md-offset-1 col-md-10">
-            <div class="panel">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col col-sm-3 col-xs-12">
-                            <h4 class="title">Data <span>List</span></h4>
-                        </div>
-                        <div class="col-sm-9 col-xs-12 text-right">
-                            <div class="btn_group">
-                                <input type="text" class="form-control" placeholder="Search">
-                                <button class="btn btn-default" title="Reload"><i class="fa fa-sync-alt"></i></button>
-                                <button class="btn btn-default" title="Pdf"><i class="fa fa-file-pdf"></i></button>
-                                <button class="btn btn-default" title="Excel"><i class="fas fa-file-excel"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="panel-body table-responsive">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Full Name</th>
-                                <th>Age</th>
-                                <th>Job Title</th>
-                                <th>City</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Vincent Williamson</td>
-                                <td>31</td>
-                                <td>iOS Developer</td>
-                                <td>Sinaai-Waas</td>
-                                <td>
-                                    <ul class="action-list">
-                                        <li><a href="#" data-tip="edit"><i class="fa fa-edit"></i></a></li>
-                                        <li><a href="#" data-tip="delete"><i class="fa fa-trash"></i></a></li>
-                                    </ul>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Taylor Reyes</td>
-                                <td>22</td>
-                                <td>UI/UX Developer</td>
-                                <td>Baileux</td>
-                                <td>
-                                    <ul class="action-list">
-                                        <li><a href="#" data-tip="edit"><i class="fa fa-edit"></i></a></li>
-                                        <li><a href="#" data-tip="delete"><i class="fa fa-trash"></i></a></li>
-                                    </ul>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Justin Block</td>
-                                <td>26</td>
-                                <td>Frontend Developer</td>
-                                <td>Overland Park</td>
-                                <td>
-                                    <ul class="action-list">
-                                        <li><a href="#" data-tip="edit"><i class="fa fa-edit"></i></a></li>
-                                        <li><a href="#" data-tip="delete"><i class="fa fa-trash"></i></a></li>
-                                    </ul>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>Sean Guzman</td>
-                                <td>26</td>
-                                <td>Web Designer</td>
-                                <td>Gloucester</td>
-                                <td>
-                                    <ul class="action-list">
-                                        <li><a href="#" data-tip="edit"><i class="fa fa-edit"></i></a></li>
-                                        <li><a href="#" data-tip="delete"><i class="fa fa-trash"></i></a></li>
-                                    </ul>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>Keith Carter</td>
-                                <td>20</td>
-                                <td>Graphic Designer</td>
-                                <td>Oud-Turnhout</td>
-                                <td>
-                                    <ul class="action-list">
-                                        <li><a href="#" data-tip="edit"><i class="fa fa-edit"></i></a></li>
-                                        <li><a href="#" data-tip="delete"><i class="fa fa-trash"></i></a></li>
-                                    </ul>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="panel-footer">
-                    <div class="row">
-                        <div class="col col-sm-6 col-xs-6">showing <b>5</b> out of <b>25</b> entries</div>
-                        <div class="col-sm-6 col-xs-6">
-                            <ul class="pagination hidden-xs pull-right">
-                                <li><a href="#"><</a></li>
-                                <li class="active"><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">5</a></li>
-                                <li><a href="#">></a></li>
-                            </ul>
-                            <ul class="pagination visible-xs pull-right">
-                                <li><a href="#"><</a></li>
-                                <li><a href="#">></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="container">
+      <form>
+        <input type="text" placeholder="Login">
+        <input type="password" placeholder="Mot de passe">
+        <button type="submit">S'inscrire</button>
+      </form>
     </div>
-</div>
+    <video class="background-video" autoplay muted loop>
+      <source src="video.mp4" type="video/mp4">
+    </video>
+
+
 
 
 <?php
