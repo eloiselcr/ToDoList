@@ -39,7 +39,7 @@ session_start();
     }
 
     try { // Connexion à la base de donnée 
-        $ipserver = "192.168.1.57";
+        $ipserver = "192.168.64.86";
         $nomBase = "ToDoList";
         $loginPrivilege = "root";
         $passPrivilege = "root";
