@@ -55,7 +55,7 @@
     height: 15px;
     width: 7px;
   }
-  
+
   /* Style the close button */
   .close {
     position: absolute;
@@ -65,16 +65,16 @@
   }
   
   .close:hover {
-    background-color: #f44336;
-    color: white;
+    background-color:#1c1c1c;
+    color: #45f3ff;
   }
   
   /* Style the header */
   .header {
     display: block;
-    background-color: #f44336;
+    background-color: #1c1c1c;
     padding: 30px 40px;
-    color: white;
+    color: #45f3ff;
     text-align: center;
   }
   

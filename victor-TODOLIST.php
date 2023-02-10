@@ -71,7 +71,20 @@ session_start();
             $_SESSION["trueconnect"] = true;
         }
     }
+    if(isset($_POST['deconnexion'])) // SESSION DESTROY pour la Deconnexion
+    {
+        session_destroy();
+        header('Location: victor-TODOLIST.php');
+    }
+    if (isset($_SESSION["toto"]) && $_SESSION["toto"]=="titi") {
+        echo 'vous etes connexté
+        <form method="post">
+        <input type="submit" value="deconnexion" name="deconnexion">
+        </form>';
+        
+    } else {
 
+    }
 
     if (isset($_SESSION["trueconnect"]) && $_SESSION["trueconnect"] == true) 
     {
@@ -82,9 +95,10 @@ session_start();
         <div id="myDIV" class="header">
             <h2>My To Do List</h2>
             <form class="taches_input" method="post" action="">
-                <label for="addtache"></label>
+                <label for="addtache"><span>Ajouter une tâche</span></label>
                 <input id="myInput" id="inserer" type="text" name="tache" />
-                <input type="submit" name="envoyer_tache" class="addBtn"></button>
+                <input type="submit" name="envoyer_tache" class="addBtn">Add</button>
+                <button type="submit" name="deconnexion" >Se deconnexion</button>
             </form>
         </div>   
         </div>
@@ -121,20 +135,10 @@ session_start();
                     <?php echo $tache['nom'] ?>
 
                     <form class="taches_supr" method="post" action="">
-                    <a class="suppr" name="supprimer_tache" href="TODOLIST.php?supprimer_tache=<?php echo $tache['id'] ?>"> X</a>
+                    <a class="suppr" href="TODOLIST.php?supprimer_tache=<?php echo $tache['id'] ?>"> X</a>
                     </form>
                 </li>
             <?php
-            }
-
-            if (isset($_POST["supprimer_tache"]))
-            {
-                if (isset($_SESSION["idUser"]))
-                {
-                    $requetesuppr = "DELETE FROM Tache WHERE tache.nom = '".$_POST["supprimer_tache"]."'";
-                    echo $requetesuppr;
-                    
-                }
             }
             ?>
 
